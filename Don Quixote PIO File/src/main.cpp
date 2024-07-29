@@ -44,8 +44,8 @@ void halt() {
 }
 
 // WiFi Setup
-const char* ssid = "Verizon_KPR9PR";
-const char* password = "due-woo3-gibber";
+const char* ssid = "WIFI NAME";
+const char* password = "WIFI PASSWORD";
 
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
