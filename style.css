@@ -1,0 +1,226 @@
+@font-face {
+  font-family: codec;
+  src:url(000webfont.ttf);
+}
+
+body {
+  background-color: black;
+  font-family: codec;
+}
+
+#title_div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); 
+  -webkit-transform: translate(-50%, -50%); 
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+#call_p {
+  margin-bottom: -55px;
+  text-align: center;
+  font-size: 50px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  background-color: #DA5F4E;
+}
+
+#command_p {
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+
+#codec_div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); 
+  -webkit-transform: translate(-50%, -50%);
+}
+
+#visual_div {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.avatar {
+  width: 200px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #55d6a0;
+}
+
+#radio_data {
+  width: 300px;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: scale3d(1, 0, 1);
+    transform: scale3d(1, 0, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+#text {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+.hud_btn {
+  font-family: codec;
+  font-size: 50px;
+  color: white;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #75FEC6;
+  margin-right: 20px;
+}
+
+#return_p {
+  font-family: codec;
+  font-size: 50px;
+  color: white;
+  margin-bottom: 100px;
+  margin-top: 0;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+#controls_div {
+  display: grid;
+  grid-template-columns: auto auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); 
+  -webkit-transform: translate(-50%, -50%);
+}
+
+#diagram_div {
+  font-family: codec;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+}
+
+#diagram_img {
+  width: 300px;
+  margin-top: -40px;
+  margin-bottom: -60px;
+}
+
+#controls {
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-column-gap: 50px;
+}
+
+#header_p {
+  font-family: codec;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  margin-bottom: -100px;
+}
+
+#controls_p {
+  font-family: codec;
+  font-size: 50px;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  margin-bottom: -100px;
+}
+
+#slide_container {
+  display: grid;
+  grid-template-columns: 110px 100px;
+}
+
+#slide_tag {
+  font-family: codec;
+  font-size: 50px;
+  color: white;
+  background-color: black;
+  width: 100px;
+  padding-left: 10px;
+}
+
+#slide_triangle {
+  width: 50px;
+  background-image: 
+    linear-gradient(to bottom left, transparent 50%, black), 
+    linear-gradient(to top right, black 50%, transparent 0);
+}
+
+#about_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); 
+  -webkit-transform: translate(-50%, -50%);
+}
+
+#info_container {
+  display: grid;
+  grid-template-columns: auto 340px;
+  font-family: codec;
+  font-size: 25px;
+  color: white;
+  background: rgba(0, 0, 0, 0.82);
+  padding-left: 10px;
+  width: 760px;
+}
+
+#about_img {
+  width: 300px;
+  margin: 20px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+#img {
+  width: 300px;
+}
+
+.view_button {
+  font-family: codec;
+  font-size: 50px;
+  color: #5A0E08;
+  background: rgba(0, 0, 0, 0.82);
+  width: 100px;
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 10px;
+  border-left-width: 30px;
+  border-right-width: 5px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
