@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DON QUIXOTE</title>
+    </head>
+</html>
+<body>
+    <div id="root"></div>
+
+    <script>
+        const url = "ws://192.168/4/1:1337/";
+        let title;
+        let w;
+        let a;
+        let s;
+        let d;
+    
+        function init() {
+            title = document.createElement("h1");
+            title.id = "title";
+    
+            w = document.createElement("button");
+            w.id = "w";
+            w.innerText = "w";
+            
+            a = document.createElement("button");
+            a.id = "a";
+            a.innerText = "a";
+    
+            s = document.createElement("button");
+            s.id = "s";
+            s.innerText = "s";
+    
+            d = document.createElement("button");
+            d.id = "d";
+            d.innerText = "d";
+    
+            w.addEventListener("mousedown", () => {
+                doSend("w");
+            });
+            w.addEventListener("mouseup", () => {
+                doSend("h");
+            });
+    
+            a.addEventListener("mousedown", () => {
+                doSend("a");
+            });
+            a.addEventListener("mouseup", () => {
+                doSend("h");
+            });
+    
+            s.addEventListener("mousedown", () => {
+                doSend("s");
+            });
+            s.addEventListener("mouseup", () => {
+                doSend("h");
+            });
+    
+            d.addEventListener("mousedown", () => {
+                doSend("d");
+            });
+            d.addEventListener("mouseup", () => {
+                doSend("h");
+            });
+
+            const root = document.getElementById("root");
+            root.appendChild(title);
+            root.appendChild(w);
+            root.appendChild(a);
+            root.appendChild(s);
+            root.appendChild(d);
+    
+            wsConnect(url);
+        } 
+    
+        function wsConnect(url) {
+            websocket = new WebSocket(url);
+    
+            websocket.onopen = (evt) => onOpen(evt);
+            websocket.onclose = (evt) => onClose(evt);
+            websocket.onmessage = (evt) => onMessage(evt);
+            websocket.onerror = (evt) => onError(evt);
+        }
+    
+        function onOpen(evt) {
+            console.log("Connected");
+        }
+    
+        function onClose(evt) {
+            console.log("Disconnected");
+    
+            setTimeout(() => wsConnect(url), 2000);
+        }
+    
+        function onMessage(evt) {
+            console.log("Received: " + evt.data);
+        }
+    
+        function onError(evt) {
+            console.log("ERROR: " + evt.data);
+        }
+    
+        function doSend(message) {
+            console.log("Sending: " + message);
+            websocket.send(message);
+        }
+    
+        window.addEventListener("load", init, false);
+    </script>
+</body>
